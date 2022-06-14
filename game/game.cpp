@@ -22,11 +22,7 @@ Game::Game()
 	ball.setPosition((WIN_WITDH / 2) - (ball.getRadius() / 2), (WIN_HEIGHT / 2) - (ball.getRadius() / 2));
 	res[0] = 0;
 	res[1] = 0;
-	this->score =  to_string(res[0]) + " | " + to_string(res[1]);
-	font.loadFromFile("./gothic.ttf");
-	text.setFont(this->font);
-	text.setString(this->score);
-	text.setPosition((WIN_HEIGHT / 2) - score.length(), 0);
+	text.update("0 | 0");
 }
 
 Game::~Game()
@@ -41,15 +37,18 @@ bool Game::isRunning() const
 
 void Game::update()
 {
+	int tmp[2];
+	tmp[0] = res[0];
+	tmp[1] = res[1];
+
 	while (window->pollEvent(event)) {
 		input.InputHandler(event, *window);
 	}
 	player.update(this->window, input.GetButton(), 1);
 	player2.update(this->window, input.GetButton(), 2);
 	ball.update(this->window, &player, &player2, res);
-	this->score = to_string(res[0]) + " | " + to_string(res[1]);
-	text.setPosition((WIN_WITDH / 2) - (text.getCharacterSize() + score.length() / 2), 0);
-	text.setString(this->score);
+	if (tmp[0] != res[0] || tmp[1] != res[1])
+		text.update(to_string(res[0]) + " | " + to_string(res[1]));
 }
 
 void Game::render()
@@ -58,6 +57,6 @@ void Game::render()
 	player.render(window);
 	player2.render(window);
 	ball.render(window);
-	window->draw(text);
+	text.render(window);
 	window->display();
 }

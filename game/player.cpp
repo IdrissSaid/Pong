@@ -2,7 +2,7 @@
 
 void Player::initVariable()
 {
-	this->speed = 5.f;
+	this->speed = 10.f;
 }
 
 void Player::initShape()

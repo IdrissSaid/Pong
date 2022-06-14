@@ -13,12 +13,13 @@ private:
 	Font font;
 
 public:
-	MyText();
+	MyText(Vector2f pos = {0, 0}, unsigned int size = 0, Color color = Color::White);
 	virtual ~MyText();
 
-	void update(string str);
+	void update(string str, Vector2f pos);
 	void render(RenderTarget *target);
 
+	unsigned int get_size();
 };
 
 #endif // !TEXT_H_

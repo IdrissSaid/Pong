@@ -47,7 +47,7 @@ void Ball::ballCollision(RenderTarget* target, Player *player1, Player *player2,
 
 	/* Player 1*/
 	pos += sens;
-	if (player1->getRect().contains(pos) && pos.y > pos_p.y + size_p.x)
+	if (player1->getRect().contains(pos))
 		sens.x *= -1;
 
 	/*Player 2*/

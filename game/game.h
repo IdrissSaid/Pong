@@ -21,8 +21,8 @@ private:
 	Event event;
 
 	Input input;
-
-	MyText text;
+	
+	MyText text = MyText(Vector2f((WIN_WITDH / 2.f) - 6, 0), 30);
 	int res[2];
 
 	Player player;

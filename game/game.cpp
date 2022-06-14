@@ -22,7 +22,7 @@ Game::Game()
 	ball.setPosition((WIN_WITDH / 2) - (ball.getRadius() / 2), (WIN_HEIGHT / 2) - (ball.getRadius() / 2));
 	res[0] = 0;
 	res[1] = 0;
-	text.update("0 | 0");
+	text.update("0 | 0", Vector2f((WIN_WITDH / 2.f) - (text.get_size() + 6), 0));
 }
 
 Game::~Game()
@@ -40,6 +40,7 @@ void Game::update()
 	int tmp[2];
 	tmp[0] = res[0];
 	tmp[1] = res[1];
+	string str;
 
 	while (window->pollEvent(event)) {
 		input.InputHandler(event, *window);
@@ -47,8 +48,10 @@ void Game::update()
 	player.update(this->window, input.GetButton(), 1);
 	player2.update(this->window, input.GetButton(), 2);
 	ball.update(this->window, &player, &player2, res);
-	if (tmp[0] != res[0] || tmp[1] != res[1])
-		text.update(to_string(res[0]) + " | " + to_string(res[1]));
+	if (tmp[0] != res[0] || tmp[1] != res[1]) {
+		str = to_string(res[0]) + " | " + to_string(res[1]);
+		text.update(str, Vector2f((WIN_WITDH / 2.f) - (text.get_size() + str.length()), 0));
+	}
 }
 
 void Game::render()

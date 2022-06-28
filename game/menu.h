@@ -16,6 +16,10 @@ public:
 	Menu();
 	~Menu();
 
+	void btnHover(RenderWindow* target);
+
+	void updateButton(RenderWindow* target);
+
 	void update(RenderWindow* target, int* statement);
 	void render(RenderTarget *target);
 };

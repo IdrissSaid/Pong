@@ -28,7 +28,7 @@ void MyText::setCenter(Vector2f cadre, Vector2f len)
 const unsigned int MyText::getSize()
 {
 	string txt = text.getString();
-	return txt.length() + text.getCharacterSize();
+	return (unsigned int) txt.length() + text.getCharacterSize();
 }
 
 const unsigned int MyText::getCharSize()

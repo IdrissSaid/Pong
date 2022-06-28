@@ -8,10 +8,14 @@ Menu::~Menu()
 {
 }
 
-void Menu::update(RenderWindow* target, int *statement)
+void Menu::btnHover(RenderWindow* target)
 {
 	quitBtn.hover(*target, Color::Red, Color::White);
-	startBtn.hover(*target, Color::Red, Color::White);
+	startBtn.hover(*target, Color::Green, Color::White);
+}
+
+void Menu::updateButton(RenderWindow* target)
+{
 	Vector2f size = startBtn.getSize();
 
 	title.setPos((target->getSize().x / 2) - (title.getSize() + title.getCharSize()), (target->getSize().y / 2.5) - title.getCharSize());
@@ -20,6 +24,13 @@ void Menu::update(RenderWindow* target, int *statement)
 	size = quitBtn.getSize();
 	quitBtn.getRect()->setPosition((target->getSize().x / 2) - (size.x / 2), (target->getSize().y / 1.6) - (size.y / 2));
 	quitTxt.setCenter(quitBtn.getPos(), startBtn.getSize());
+}
+
+void Menu::update(RenderWindow* target, int *statement)
+{
+
+	btnHover(target);
+	updateButton(target);
 	if (*statement == 0 && startBtn.isOnBtn(*target) && Mouse::isButtonPressed(Mouse::Button::Left))
 		*statement = 1;
 	if (*statement == 0 && quitBtn.isOnBtn(*target) && Mouse::isButtonPressed(Mouse::Button::Left))

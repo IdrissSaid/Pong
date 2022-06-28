@@ -13,7 +13,7 @@ public:
 
 	struct Button { bool up, down, escape, arrow_up, arrow_down; };
 	Button GetButton(void) const;
-	void InputHandler(Event event, RenderWindow &window);
+	void InputHandler(Event event, RenderWindow &window, int *statement);
 
 private:
 	Button button;

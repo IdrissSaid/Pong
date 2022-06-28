@@ -33,6 +33,12 @@
     <ClCompile Include="text.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="button.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -48,6 +54,12 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="text.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="button.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>

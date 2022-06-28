@@ -10,9 +10,9 @@ Input::Button Input::GetButton(void) const
 	return button;
 }
 
-void Input::InputHandler(Event event, RenderWindow& window)
+void Input::InputHandler(Event event, RenderWindow& window, int *statement)
 {
-	if (event.type == Event::Closed)
+	if (event.type == Event::Closed || *statement == -1)
 		window.close();
 	if (event.type != Event::KeyPressed && event.type != Event::KeyReleased)
 		return;

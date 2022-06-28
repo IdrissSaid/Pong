@@ -1,11 +1,16 @@
 ﻿  game.cpp
-C:\Users\saidm\Documents\GitHub\Pong\game\game.h(10,25): warning C4244: '=' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\saidm\Documents\GitHub\Pong\game\game.h(11,26): warning C4244: '=' : conversion de 'float' en 'unsigned int', perte possible de données
   main.cpp
-  text.cpp
+  menu.cpp
+C:\Users\saidm\Documents\GitHub\Pong\game\menu.cpp(17,112): warning C4244: 'argument' : conversion de 'double' en 'const float', perte possible de données
+C:\Users\saidm\Documents\GitHub\Pong\game\menu.cpp(17,41): warning C4244: 'argument' : conversion de 'T' en 'const float', perte possible de données
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\saidm\Documents\GitHub\Pong\game\menu.cpp(21,103): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
   Génération de code en cours
-  4 of 157 functions ( 2.5%) were compiled, the rest were copied from previous compilation.
-    1 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  2 of 173 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   game.vcxproj -> C:\Users\saidm\Documents\GitHub\Pong\x64\Release\game.exe

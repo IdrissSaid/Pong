@@ -6,23 +6,27 @@
 #include "player.h"
 #include "ball.h"
 #include "text.h"
+#include "menu.h"
 
-const float WIN_WITDH = 800.f;
-const float WIN_HEIGHT = 600.f;
+const unsigned int WIN_WITDH = 800;
+const unsigned int WIN_HEIGHT = 600;
 
 using namespace sf;
 using namespace std;
 
-class Game
-{
+class Game {
 private:
-	RenderWindow *window;
+	int statement = 0;
+
+	RenderWindow* window;
 	VideoMode videoMode;
 	Event event;
 
 	Input input;
-	
-	MyText text = MyText(Vector2f((WIN_WITDH / 2.f) - 6, 0), 30);
+
+	Menu menu;
+
+	MyText text = MyText("", Vector2f((WIN_WITDH / 2.f) - 6, 0), 30);
 	int res[2];
 
 	Player player;

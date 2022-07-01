@@ -13,13 +13,18 @@ private:
 	Font font;
 
 public:
-	MyText(Vector2f pos = {0, 0}, unsigned int size = 0, Color color = Color::White);
+	MyText(string str = nullptr, Vector2f pos = {0, 0}, unsigned int size = 0, Color color = Color::White);
 	virtual ~MyText();
+
+	void setPos(const float x, const float y);
+
+	void setCenter(Vector2f cadre, Vector2f len);
+
+	const unsigned int getSize();
+	const unsigned int getCharSize();
 
 	void update(string str, Vector2f pos);
 	void render(RenderTarget *target);
-
-	unsigned int get_size();
 };
 
 #endif // !TEXT_H_
